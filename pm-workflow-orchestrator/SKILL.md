@@ -1,32 +1,34 @@
 ---
 name: "pm-workflow-orchestrator"
-description: "Guide product managers through a step-by-step workflow for requirement discovery, business modeling, PRD drafting, prototype validation, Mermaid flowcharts, final delivery, and version iteration. Use for end-to-end PM workflows. This skill is self-contained and supports optional local companion skills for PRD writing, data-flow/calculation details, or review, without requiring or exposing any private skill names."
+description: "A PM workflow orchestrator that coordinates step-by-step requirement discovery, business modeling, PRD drafting, prototype validation, Mermaid flowcharts, final delivery, and version iteration. Use it as the process layer for end-to-end PM workflows. It is self-contained, but can be combined with specialized PM companion skills for PRD writing, data-flow/calculation details, domain analysis, or review without requiring or exposing private skill names."
 ---
 
 # PM Workflow Orchestrator
 
-This skill is a workflow orchestrator. It keeps the product requirement process moving step by step, manages confirmation gates, and produces usable PM deliverables. It must remain fully usable without any private companion skills.
+This skill is a workflow orchestrator, not a specialist writing skill. It keeps the product requirement process moving step by step, manages confirmation gates, and coordinates usable PM deliverables. It must remain fully usable on its own, while also being able to work with specialized PM companion skills when they are available.
 
 ## Core Positioning
 
-- Own the process, confirmation gates, source discipline, and delivery sequence.
+- Own the process layer: confirmation gates, source discipline, step order, and delivery sequence.
+- Coordinate specialist work without taking over every specialist rule.
 - Do not depend on private skill names, private templates, or private business rules.
-- If optional local companion skills exist, use them only as implementation helpers.
+- If optional local companion skills exist, use them as specialist helpers under this workflow.
 - If no companion skill exists, use the fallback checklists in this skill.
 - Never turn examples, templates, review comments, historical references, or future ideas into confirmed scope.
 - Mark unsupported business content as `待确认`.
 
 ## Optional Extension Hooks
 
-This public skill supports optional local companion skills, but must not name or require them.
+This public skill is designed to combine with optional specialized PM companion skills, but must not name or require them.
 
 Optional companion areas:
 
 - PRD writing and cleanup
 - data-flow, calculation rules, formulas, aggregation, and report-field writing
+- domain-specific requirement analysis
 - PRD/prototype review, challenge, and risk finding
 
-When a suitable local companion skill is available, use it as an enhancement. When unavailable, follow the fallback rules below. The final output must not mention hidden or private companion skill names.
+When a suitable local companion skill is available, route the specialist portion to it while keeping this skill responsible for the workflow state and confirmation gates. When unavailable, follow the fallback rules below. The final output must not mention hidden or private companion skill names.
 
 ## Non-Negotiable Workflow Rules
 
